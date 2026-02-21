@@ -1,0 +1,51 @@
+(defproject neanderthal-blas-like "0.1.0"
+  :description "BLAS-like Extensions for Neanderthal, Fast Clojure Matrix Library"
+  :url "https://github.com/katox/neanderthal-blas-like"
+  :license {:name "Eclipse Public License 2.0"
+            :url  "https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.html"}
+  :dependencies [[org.clojure/clojure "1.12.3"]
+                 [org.uncomplicate/neanderthal-base "0.60.0"]
+                 [org.uncomplicate/neanderthal-openblas "0.60.0"]]
+
+  :codox {:metadata                  {:doc/format :markdown}
+          :src-dir-uri               "https://github.com/katox/neanderthal-blas-like/blob/master/"
+          :src-linenum-anchor-prefix "L"
+          :namespaces                [neanderthal-blas-like.batch]
+          :output-path               "doc/codox"}
+
+  ;;also replaces lein's default JVM argument TieredStopAtLevel=1
+  :jvm-opts ^:replace ["-Dclojure.compiler.direct-linking=true"]
+
+  :repl-options {:init-ns neanderthal-blas-like.batch}
+
+  :profiles {:dev      {:plugins      [[lein-midje "3.2.1"]
+                                       [lein-codox "0.10.8"]]
+                        :global-vars  {*warn-on-reflection* true
+                                       *assert*             false
+                                       *unchecked-math*     :warn-on-boxed
+                                       *print-length*       128}
+                        :dependencies [[midje "1.10.10"]
+                                       [org.clojure/test.check "1.1.1"]
+                                       [org.uncomplicate/neanderthal-mkl "0.60.0"]
+                                       [org.uncomplicate/neanderthal-cuda "0.60.3"]
+                                       [org.uncomplicate/neanderthal-opencl "0.60.0"]
+                                       [org.bytedeco/mkl "2025.2-1.5.12" :classifier "linux-x86_64-redist"]
+                                       [org.bytedeco/cuda-redist "13.1-9.19-1.5.13-20260206.134933-4" :classifier "linux-x86_64"]
+                                       [org.bytedeco/cuda-redist-cublas "13.1-9.19-1.5.13-20260206.135029-4" :classifier "linux-x86_64"]
+                                       ;[org.bytedeco/mkl "2025.2-1.5.12" :classifier "windows-x86_64-redist"]
+                                       ;[org.bytedeco/cuda-redist "13.1-9.19-1.5.13-20260206.134933-4" :classifier "windows-x86_64"]
+                                       ;[org.bytedeco/cuda-redist-cublas "13.1-9.19-1.5.13-20260206.135029-4" :classifier "windows-x86_64"]
+                                       [nrepl/nrepl "1.3.1"]]}
+             :jvm-opts ^:replace ["-Dclojure.compiler.direct-linking=true"
+                                  "--enable-native-access=ALL-UNNAMED"]}
+
+  :javac-options ["-target" "1.8" "-source" "1.8" "-Xlint:-options"]
+  :source-paths ["src"]
+  :test-paths ["test"]
+
+  :repositories [["sonatype-snapshots" {:id  "SonatypeSnapshots"
+                                        :url "https://oss.sonatype.org/content/repositories/snapshots/"}]
+                 ["sonatype-releases" {:id  "SonatypeReleases"
+                                       :url "https://oss.sonatype.org/content/repositories/releases/"}]
+                 ["maven-releases" {:id  "MavenReleases"
+                                    :url "https://central.sonatype.com/repository/maven-snapshots"}]])

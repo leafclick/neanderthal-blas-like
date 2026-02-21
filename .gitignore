@@ -20,3 +20,4 @@ hs_*.log
 /.idea
 *.iml
 /.clj-kondo/.cache
+/projectFilesBackup
