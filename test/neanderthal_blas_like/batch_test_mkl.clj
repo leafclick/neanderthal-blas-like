@@ -7,6 +7,7 @@
 ;;   You must not remove this notice, or any other, from this software.
 
 (ns neanderthal-blas-like.batch-test-mkl
+  (:refer-clojure :exclude [abs])
   (:require [midje.sweet :refer [facts]]
             [uncomplicate.neanderthal.internal.api :refer :all]
             [uncomplicate.neanderthal.internal.cpp.mkl.factory

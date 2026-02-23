@@ -7,6 +7,7 @@
 ;;   You must not remove this notice, or any other, from this software.
 
 (ns neanderthal-blas-like.batch-test-openblas
+  (:refer-clojure :exclude [abs])
   (:require [midje.sweet :refer [facts]]
             [uncomplicate.neanderthal.native :refer [native-float native-double]]
             [uncomplicate.neanderthal.internal.cpp.openblas.factory :refer [openblas-float openblas-double]]

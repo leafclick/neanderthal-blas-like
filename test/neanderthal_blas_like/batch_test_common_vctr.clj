@@ -8,6 +8,7 @@
 
 ;; ... existing code ...
 (ns neanderthal-blas-like.batch-test-common-vctr
+  (:refer-clojure :exclude [abs])
   (:require [midje.sweet :refer [facts fact roughly just =>]]
             [uncomplicate.commons.core :refer [with-release]]
             [uncomplicate.neanderthal.core :refer [vctr subvector mm! axpy! entry! transfer!]]

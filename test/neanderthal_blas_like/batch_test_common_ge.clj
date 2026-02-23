@@ -7,6 +7,7 @@
 ;;   You must not remove this notice, or any other, from this software.
 
 (ns neanderthal-blas-like.batch-test-common-ge
+  (:refer-clojure :exclude [abs])
   (:require [midje.sweet :refer [facts fact roughly just =>]]
             [uncomplicate.commons.core :refer [with-release]]
             [uncomplicate.neanderthal.core :refer [ge mm! axpy! entry! transfer! trans]]

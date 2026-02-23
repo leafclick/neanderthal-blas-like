@@ -4,8 +4,8 @@
   :license {:name "Eclipse Public License 2.0"
             :url  "https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.html"}
   :dependencies [[org.clojure/clojure "1.12.3"]
-                 [org.uncomplicate/neanderthal-base "0.60.0"]
-                 [org.uncomplicate/neanderthal-openblas "0.60.0"]]
+                 [org.uncomplicate/neanderthal-base "0.61.0"]
+                 [org.uncomplicate/neanderthal-openblas "0.61.0"]]
 
   :codox {:metadata                  {:doc/format :markdown}
           :src-dir-uri               "https://github.com/katox/neanderthal-blas-like/blob/master/"
@@ -26,15 +26,15 @@
                                        *print-length*       128}
                         :dependencies [[midje "1.10.10"]
                                        [org.clojure/test.check "1.1.1"]
-                                       [org.uncomplicate/neanderthal-mkl "0.60.0"]
-                                       [org.uncomplicate/neanderthal-cuda "0.60.3"]
-                                       [org.uncomplicate/neanderthal-opencl "0.60.0"]
-                                       [org.bytedeco/mkl "2025.2-1.5.12" :classifier "linux-x86_64-redist"]
-                                       [org.bytedeco/cuda-redist "13.1-9.19-1.5.13-20260206.134933-4" :classifier "linux-x86_64"]
-                                       [org.bytedeco/cuda-redist-cublas "13.1-9.19-1.5.13-20260206.135029-4" :classifier "linux-x86_64"]
-                                       ;[org.bytedeco/mkl "2025.2-1.5.12" :classifier "windows-x86_64-redist"]
-                                       ;[org.bytedeco/cuda-redist "13.1-9.19-1.5.13-20260206.134933-4" :classifier "windows-x86_64"]
-                                       ;[org.bytedeco/cuda-redist-cublas "13.1-9.19-1.5.13-20260206.135029-4" :classifier "windows-x86_64"]
+                                       [org.uncomplicate/neanderthal-mkl "0.61.0"]
+                                       [org.uncomplicate/neanderthal-cuda "0.61.0"]
+                                       [org.uncomplicate/neanderthal-opencl "0.61.0"]
+                                       [org.bytedeco/mkl "2025.3-1.5.13" :classifier "linux-x86_64-redist"]
+                                       [org.bytedeco/cuda-redist "13.1-9.19-1.5.13" :classifier "linux-x86_64"]
+                                       [org.bytedeco/cuda-redist-cublas "13.1-9.19-1.5.13" :classifier "linux-x86_64"]
+                                       ;[org.bytedeco/mkl "2025.3-1.5.13" :classifier "windows-x86_64-redist"]
+                                       ;[org.bytedeco/cuda-redist "13.1-9.19-1.5.13" :classifier "windows-x86_64"]
+                                       ;[org.bytedeco/cuda-redist-cublas "13.1-9.19-1.5.13" :classifier "windows-x86_64"]
                                        [nrepl/nrepl "1.3.1"]]}
              :jvm-opts ^:replace ["-Dclojure.compiler.direct-linking=true"
                                   "--enable-native-access=ALL-UNNAMED"]}
