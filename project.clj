@@ -1,4 +1,4 @@
-(defproject neanderthal-blas-like "0.1.0"
+(defproject com.leafclick/neanderthal-blas-like "0.2.0"
   :description "BLAS-like Extensions for Neanderthal, Fast Clojure Matrix Library"
   :url "https://github.com/katox/neanderthal-blas-like"
   :license {:name "Eclipse Public License 2.0"

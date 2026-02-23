@@ -15,7 +15,7 @@ Added functions:
 Add the necessary dependency to your project:
 
 ```$clojure
-    [neanderthal-blas-like "0.1.0"]
+    [com.leafclick/neanderthal-blas-like "0.2.0"]
 ```
 
 ## Running Tests
