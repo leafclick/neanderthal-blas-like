@@ -7,13 +7,14 @@
 ;;   You must not remove this notice, or any other, from this software.
 
 (ns neanderthal-blas-like.be.openblas
+  (:refer-clojure :exclude [abs])
   (:require [neanderthal-blas-like.internal.api :refer [BatchedBlas gemm-batch-strided axpy-batch-strided]]
             [uncomplicate.neanderthal.core :refer [mrows ncols dim mm! axpy! subvector]]
             [uncomplicate.neanderthal.internal.api :as iapi]
             [uncomplicate.neanderthal.internal.cpp.openblas.factory])
   (:import [uncomplicate.neanderthal.internal.cpp.openblas.factory
             FloatGEEngine DoubleGEEngine FloatVectorEngine DoubleVectorEngine]
-           [uncomplicate.neanderthal.internal.api GEMatrix LayoutNavigator]))
+           [uncomplicate.neanderthal.internal.api GEMatrix Matrix Vector LayoutNavigator]))
 
 (defn- strided-ge
   "Return a GE view into the same buffer as `a`, offset by `element-offset` elements,
@@ -23,7 +24,7 @@
         col-major? (.isColumnMajor ^LayoutNavigator nav)
         col-offset (if col-major? (quot element-offset m) (rem element-offset n))
         row-offset (if col-major? (rem element-offset m) (quot element-offset n))]
-    (.submatrix a row-offset col-offset m n)))
+    (.submatrix ^Matrix a row-offset col-offset m n)))
 
 (defmacro openblas-real-ge-batched-blas* [name]
   `(extend-type ~name
@@ -53,8 +54,8 @@
                                stride-y# (long stride-y#)
                                batch-size# (long batch-size#)]
                            (dotimes [i# batch-size#]
-                             (let [xi# (.subvector x# (* (long i#) stride-x#) n#)
-                                   yi# (.subvector y# (* (long i#) stride-y#) n#)]
+                             (let [xi# (.subvector ^Vector x# (* (long i#) stride-x#) n#)
+                                   yi# (.subvector ^Vector y# (* (long i#) stride-y#) n#)]
                                (axpy! alpha# xi# yi#))))
                          y#)))
 

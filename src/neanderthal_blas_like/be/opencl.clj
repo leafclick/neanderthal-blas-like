@@ -7,6 +7,7 @@
 ;;   You must not remove this notice, or any other, from this software.
 
 (ns neanderthal-blas-like.be.opencl
+  (:refer-clojure :exclude [abs])
   (:require [clojure.java.io :as io]
             [neanderthal-blas-like.internal.api :refer [BatchedBlas gemm-batch-strided axpy-batch-strided]]
             [uncomplicate.neanderthal.core :refer [ncols dim]]

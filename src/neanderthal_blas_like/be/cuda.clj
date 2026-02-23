@@ -7,6 +7,7 @@
 ;;   You must not remove this notice, or any other, from this software.
 
 (ns neanderthal-blas-like.be.cuda
+  (:refer-clojure :exclude [abs])
   (:require [neanderthal-blas-like.internal.api :refer :all]
             [clojure.java.io :as io]
             [uncomplicate.commons.core :refer [with-release let-release Releaseable release]]
