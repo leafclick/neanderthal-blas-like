@@ -1,11 +1,11 @@
-(defproject com.leafclick/neanderthal-blas-like "0.2.0"
+(defproject com.leafclick/neanderthal-blas-like "0.3.0"
   :description "BLAS-like Extensions for Neanderthal, Fast Clojure Matrix Library"
   :url "https://github.com/katox/neanderthal-blas-like"
   :license {:name "Eclipse Public License 2.0"
             :url  "https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.html"}
   :dependencies [[org.clojure/clojure "1.12.3"]
-                 [org.uncomplicate/neanderthal-base "0.61.0"]
-                 [org.uncomplicate/neanderthal-openblas "0.61.0"]]
+                 [org.uncomplicate/neanderthal-base "0.63.0"]
+                 [org.uncomplicate/neanderthal-openblas "0.63.0"]]
 
   :codox {:metadata                  {:doc/format :markdown}
           :src-dir-uri               "https://github.com/katox/neanderthal-blas-like/blob/master/"
@@ -26,9 +26,9 @@
                                        *print-length*       128}
                         :dependencies [[midje "1.10.10"]
                                        [org.clojure/test.check "1.1.1"]
-                                       [org.uncomplicate/neanderthal-mkl "0.61.0"]
-                                       [org.uncomplicate/neanderthal-cuda "0.61.0"]
-                                       [org.uncomplicate/neanderthal-opencl "0.61.0"]
+                                       [org.uncomplicate/neanderthal-mkl "0.63.0"]
+                                       [org.uncomplicate/neanderthal-cuda "0.63.0"]
+                                       [org.uncomplicate/neanderthal-opencl "0.63.0"]
                                        [org.bytedeco/mkl "2025.3-1.5.13" :classifier "linux-x86_64-redist"]
                                        [org.bytedeco/cuda-redist "13.1-9.19-1.5.13" :classifier "linux-x86_64"]
                                        [org.bytedeco/cuda-redist-cublas "13.1-9.19-1.5.13" :classifier "linux-x86_64"]
